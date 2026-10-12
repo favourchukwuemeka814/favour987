@@ -1,0 +1,162 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 24px;
+}
+
+/* Main grid */
+.testimonials {
+    width: 100%;
+    max-width: 1110px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* Cards */
+.card {
+    padding: 30px 32px;
+    border-radius: 8px;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.10);
+}
+
+.purple {
+    background: #7541c8;
+    grid-column: span 2;
+}
+
+.slate {
+    background: #48556a;
+}
+
+.dark {
+    background: #19212e;
+    grid-column: span 2;
+}
+
+.white {
+    background: #ffffff;
+    color: #48556a;
+}
+
+.kira {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+}
+
+.jeanette {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+/* Profile */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.profile h3 {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.profile span {
+    display: block;
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+/* Headings */
+.card h2 {
+    font-size: 20px;
+    line-height: 1.35;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Paragraphs */
+.card p {
+    font-size: 13px;
+    line-height: 1.55;
+    opacity: 0.8;
+}
+
+/* Responsive tablet layout */
+@media (max-width: 900px) {
+    .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .purple,
+    .dark {
+        grid-column: span 2;
+    }
+
+    .slate,
+    .jeanette {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+
+    .kira {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+}
+
+/* Responsive mobile layout */
+@media (max-width: 600px) {
+    body {
+        padding: 30px 20px;
+    }
+
+    .testimonials {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .card,
+    .purple,
+    .slate,
+    .dark,
+    .white,
+    .kira,
+    .jeanette {
+        grid-column: auto;
+        grid-row: auto;
+        padding: 26px;
+    }
+
+    .card h2 {
+        font-size: 19px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+}
